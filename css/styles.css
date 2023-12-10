@@ -1,0 +1,402 @@
+/* Fonts */
+@font-face {
+    font-family: 'YouMurderer';
+    src: url(youmurderer.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Global */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background: url(../img/background.jpg) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+#app {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+a {
+    cursor: auto;
+    text-decoration: none;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+/* Vue animation */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: all 0.4s ease;
+}
+
+.fade-enter-to {
+    opacity: 1;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-leave-active {
+    transition: all 0.4s ease;
+}
+
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* Start Screen */
+.game_start_screen h1 {
+    color: #000;
+    font-family: 'YouMurderer';
+    font-size: 120px;
+    margin-bottom: 40px;
+}
+
+.game_start_screen img {
+    margin-bottom: 75px;
+}
+
+.btn_game {
+    background-color: #000;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 1px transparent;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: 'YouMurderer';
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    padding: 0 50px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+}
+
+.btn_game:hover {
+    -webkit-animation: hvr-buzz-out 0.75s linear;
+    animation: hvr-buzz-out 0.75s linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.btn_game:active,
+.btn_game:focus {
+    outline: 0;
+}
+
+/* Play Screen */
+.joker_side {
+    position: relative;
+}
+
+.joker_attack {
+    height: auto;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 220px;
+    width: 100px;
+}
+
+@keyframes jokerAttackAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(200px, 0);
+    }
+}
+
+.batman_side {
+    position: relative;
+}
+
+.batman_attack {
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    right: 50%;
+    top: 220px;
+    width: 100px;
+}
+
+@keyframes batmanAttackAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-200px, 0);
+    }
+}
+
+.player_names {
+    color: #000;
+    display: block;
+    font-family: 'YouMurderer';
+    font-size: 75px;
+}
+
+.healthbar {
+    background-color: #000;
+    border-radius: 15px;
+    height: 30px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.healthbar2 {
+    background-color: #5f2383;
+    border-radius: 15px;
+    color: #fff;
+    height: 100%;
+    line-height: 30px;
+    transition: width 500ms;
+    width: 100%;
+}
+
+.joker {
+    animation: jokerComeIn 0.5s ease;
+    margin: 50px auto;
+    width: 130px;
+}
+
+@keyframes jokerComeIn {
+    0% {
+        transform: translate(-200px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.batman {
+    animation: batmanComeIn 0.5s ease;
+    margin: 50px auto;
+    width: 141px;
+}
+
+@keyframes batmanComeIn {
+    0% {
+        transform: translate(200px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.button_container {
+    background-color: #000;
+    border-radius: 15px;
+    margin: 0 auto;
+    vertical-align: middle;
+    width: 370px;
+}
+
+@-webkit-keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+
+@keyframes hvr-buzz-out {
+    10% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+        -webkit-transform: translateX(2px) rotate(1deg);
+        transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+        -webkit-transform: translateX(-2px) rotate(-1deg);
+        transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+        -webkit-transform: translateX(1px) rotate(0);
+        transform: translateX(1px) rotate(0);
+    }
+    100% {
+        -webkit-transform: translateX(-1px) rotate(0);
+        transform: translateX(-1px) rotate(0);
+    }
+}
+
+.player_button {
+    background-color: transparent;
+    border: 0;
+    box-shadow: 0 0 1px transparent;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 16px 15px 0;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    vertical-align: middle;
+}
+
+.player_button:hover {
+    -webkit-animation: hvr-buzz-out 0.75s linear;
+    animation: hvr-buzz-out 0.75s linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.player_button:active,
+.player_button:focus {
+    outline: 0;
+}
+
+.player_button img {
+    display: block;
+    height: 22px;
+    margin: 0 auto 5px auto;
+}
+
+.joker_attack {
+    position: absolute;
+}
+
+.batman_attack {
+    position: absolute;
+}
+
+/* Win & Lose Screen */
+.game_over_screen img {
+    margin: 20px 0 50px;
+    width: 315px;
+}
+
+.game_over_screen h2 {
+    color: #000;
+    font-family: 'YouMurderer';
+    font-size: 69px;
+}
+
+/* Responsive */
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 300px) and (max-width: 767px) {
+    .game_start_screen h1 {
+        font-size: 64px;
+    }
+    .button_container {
+        bottom: 20px;
+        left: 50%;
+        margin-left: -185px;
+        position: fixed;
+    }
+    .btn_game {
+        font-size: 40px;
+        letter-spacing: 3px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+    .game_over_screen h2 {
+        font-size: 58px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {}
